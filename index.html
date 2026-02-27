@@ -1,15 +1,61 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Dev Terminal Portfolio</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <h1 class="text-7xl font-bold underline">
-      Hello this is the first session
-    </h1>
+  <body
+    class="bg-gray-800 h-screen flex items-center justify-center p-4 font-mono"
+  >
+    <div
+      class="w-full max-w-3xl bg-gray-900 rounded-lg shadow-2xl overflow-hidden border border-gray-700 flex flex-col h-[80vh]"
+    >
+      <!-- Terminal Header -->
+      <div
+        class="bg-gray-800 px-4 py-2 flex items-center border-b border-gray-700"
+      >
+        <div class="flex space-x-2">
+          <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+          <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+          <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+        </div>
+        <div class="mx-auto text-gray-400 text-sm">guest@dev-portfolio:~</div>
+      </div>
+
+      <!-- Terminal Body -->
+      <div
+        id="terminal-body"
+        class="p-4 flex-1 overflow-y-auto text-green-400 text-sm sm:text-base"
+      >
+        <div class="mb-4">
+          <p>Welcome to DevOS v1.0.0</p>
+          <p>
+            Type <span class="text-yellow-400">'help'</span> to see available
+            commands.
+          </p>
+        </div>
+        <div id="output"></div>
+
+        <!-- Input Line -->
+        <div class="flex items-center mt-2">
+          <span class="text-blue-400 mr-2">guest@dev:~$</span>
+          <input
+            type="text"
+            id="command-input"
+            class="flex-1 bg-transparent outline-none text-green-400 caret-transparent"
+            autocomplete="off"
+            autofocus
+          />
+          <span
+            id="cursor"
+            class="w-2 h-5 bg-green-400 animate-blink ml-1"
+          ></span>
+        </div>
+      </div>
+    </div>
 
     <script src="./script.js"></script>
   </body>
